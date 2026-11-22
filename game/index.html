@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Pact — a duel of cards</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="table">
+  <header id="topbar">
+    <div id="game-title">EMBER PACT</div>
+    <div id="score-line">Score <b id="score">0</b> &middot; Round <b id="round">1</b> &middot; Deck <b id="deck-count">0</b></div>
+  </header>
+
+  <section id="opponent-row" aria-label="Opponent">
+    <div class="fighter" id="foe-box">
+      <div class="fighter-name">ROOK, THORN KEEPER</div>
+      <div class="hp-bar"><div class="hp-fill foe" id="foe-hp-fill"></div><span class="hp-text" id="foe-hp-text"></span></div>
+      <div class="block-line">Block <b id="foe-block">0</b></div>
+      <div class="intent" id="foe-intent">Rook is sizing you up&hellip;</div>
+    </div>
+    <div id="foe-hand" class="mini-hand" aria-label="Opponent hand"></div>
+  </section>
+
+  <section id="mid-row">
+    <div id="log" aria-live="polite"></div>
+    <div id="ember-box">EMBER <span id="ember-pips"></span><span id="ember-text"></span></div>
+  </section>
+
+  <section id="player-row" aria-label="Your hand">
+    <div class="fighter" id="you-box">
+      <div class="fighter-name">YOU, PACT-BOUND</div>
+      <div class="hp-bar"><div class="hp-fill you" id="you-hp-fill"></div><span class="hp-text" id="you-hp-text"></span></div>
+      <div class="block-line">Block <b id="you-block">0</b></div>
+      <div class="resonance" id="resonance-line">Play two cards of one suit in a turn: Resonance +2</div>
+    </div>
+    <div id="hand" class="hand"></div>
+    <div id="controls">
+      <button id="end-turn" type="button">End Turn [Space]</button>
+      <button id="restart" type="button">New Duel [R]</button>
+    </div>
+  </section>
+
+  <div id="overlay" class="hidden">
+    <div id="overlay-card">
+      <h1 id="overlay-title"></h1>
+      <p id="overlay-sub"></p>
+      <p id="overlay-how"></p>
+      <button id="overlay-btn" type="button"></button>
+    </div>
+  </div>
+  <p id="status" role="status" aria-live="polite"></p>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
